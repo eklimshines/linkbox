@@ -8,7 +8,7 @@ plugins {
 
 android {
     namespace = "dev.mj.linkbox"
-    compileSdk = 36
+    compileSdk = 37
 
     defaultConfig {
         applicationId = "dev.mj.linkbox"
