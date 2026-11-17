@@ -17,7 +17,7 @@ private val LightColors = lightColorScheme(
     background = Paper,
     surface = Paper,
     onBackground = Ink,
-    onSurface = Ink,
+    onSurface = Ink
 )
 
 private val DarkColors = darkColorScheme(
@@ -25,16 +25,13 @@ private val DarkColors = darkColorScheme(
     background = Ink,
     surface = Ink,
     onBackground = Paper,
-    onSurface = Paper,
+    onSurface = Paper
 )
 
 @Composable
-fun LinkboxTheme(
-    darkTheme: Boolean = isSystemInDarkTheme(),
-    content: @Composable () -> Unit,
-) {
+fun LinkboxTheme(darkTheme: Boolean = isSystemInDarkTheme(), content: @Composable () -> Unit) {
     MaterialTheme(
         colorScheme = if (darkTheme) DarkColors else LightColors,
-        content = content,
+        content = content
     )
 }

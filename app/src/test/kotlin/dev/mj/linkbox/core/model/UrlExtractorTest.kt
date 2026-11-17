@@ -9,7 +9,7 @@ class UrlExtractorTest {
     fun `공유 문장 사이의 URL을 뽑는다`() {
         assertEquals(
             "https://youtu.be/dQw4w9WgXcQ",
-            UrlExtractor.extractFirst("Check this out https://youtu.be/dQw4w9WgXcQ"),
+            UrlExtractor.extractFirst("Check this out https://youtu.be/dQw4w9WgXcQ")
         )
     }
 
@@ -17,7 +17,7 @@ class UrlExtractorTest {
     fun `문장 끝 마침표는 URL에 포함하지 않는다`() {
         assertEquals(
             "https://example.com/post",
-            UrlExtractor.extractFirst("Read https://example.com/post."),
+            UrlExtractor.extractFirst("Read https://example.com/post.")
         )
     }
 
@@ -25,7 +25,7 @@ class UrlExtractorTest {
     fun `짝이 맞는 괄호는 URL에 남긴다`() {
         assertEquals(
             "https://en.wikipedia.org/wiki/Kotlin_(programming_language)",
-            UrlExtractor.extractFirst("(see https://en.wikipedia.org/wiki/Kotlin_(programming_language))"),
+            UrlExtractor.extractFirst("(see https://en.wikipedia.org/wiki/Kotlin_(programming_language))")
         )
     }
 
@@ -33,7 +33,7 @@ class UrlExtractorTest {
     fun `URL 바로 뒤에 붙은 한국어는 자른다`() {
         assertEquals(
             "https://example.com/a",
-            UrlExtractor.extractFirst("링크: https://example.com/a입니다"),
+            UrlExtractor.extractFirst("링크: https://example.com/a입니다")
         )
     }
 
@@ -41,7 +41,7 @@ class UrlExtractorTest {
     fun `여러 개면 첫 번째만`() {
         assertEquals(
             "https://first.com",
-            UrlExtractor.extractFirst("https://first.com and https://second.com"),
+            UrlExtractor.extractFirst("https://first.com and https://second.com")
         )
     }
 

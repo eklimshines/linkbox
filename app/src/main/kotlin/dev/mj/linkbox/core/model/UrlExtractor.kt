@@ -13,7 +13,7 @@ package dev.mj.linkbox.core.model
 object UrlExtractor {
     private val URL_REGEX = Regex(
         """https?://[A-Za-z0-9\-._~:/?#\[\]@!$&'()*+,;=%]+""",
-        RegexOption.IGNORE_CASE,
+        RegexOption.IGNORE_CASE
     )
 
     // 문장 끝 구두점은 URL 이 아니라고 본다. ')' 는 괄호 짝을 보고 따로 판단.
@@ -30,7 +30,9 @@ object UrlExtractor {
             val shouldTrim = when (result.last()) {
                 // https://en.wikipedia.org/wiki/Kotlin_(programming_language) 의 ')' 는 살린다
                 ')' -> result.count { it == '(' } < result.count { it == ')' }
+
                 in TRAILING_PUNCTUATION -> true
+
                 else -> false
             }
             if (!shouldTrim) break

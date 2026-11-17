@@ -15,19 +15,13 @@ import dev.mj.linkbox.core.designsystem.theme.LinkboxTheme
 
 /** Route: ViewModel 을 아는 쪽. Screen: 상태만 받는 쪽 (프리뷰와 UI 테스트가 쉬워진다). */
 @Composable
-fun LinkListRoute(
-    modifier: Modifier = Modifier,
-    viewModel: LinkListViewModel = hiltViewModel(),
-) {
+fun LinkListRoute(modifier: Modifier = Modifier, viewModel: LinkListViewModel = hiltViewModel()) {
     val message by viewModel.message.collectAsStateWithLifecycle()
     LinkListScreen(message = message, modifier = modifier)
 }
 
 @Composable
-internal fun LinkListScreen(
-    message: String,
-    modifier: Modifier = Modifier,
-) {
+internal fun LinkListScreen(message: String, modifier: Modifier = Modifier) {
     Box(modifier = modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
         Text(text = message, style = MaterialTheme.typography.titleMedium)
     }

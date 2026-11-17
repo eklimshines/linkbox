@@ -12,5 +12,5 @@ data class Link(
     val title: String?,
     val tags: List<String>,
     val isRead: Boolean,
-    val savedAt: Instant,
+    val savedAt: Instant
 )
